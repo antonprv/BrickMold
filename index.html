@@ -6,278 +6,223 @@
 <title>Гибка кирпича — Википедия</title>
 <style>
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #fff;
     color: #202122;
-    font-size: 14px;
+    font-size: 15.5px;
   }
   a { color: #0645ad; text-decoration: none; }
   a:visited { color: #0b0080; }
   a:hover { text-decoration: underline; }
-  .external { background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>") no-repeat right center; padding-right: 13px; }
 
-  /* Верхняя личная панель */
-  .personal-bar {
-    background: #eaecf0;
-    border-bottom: 1px solid #a2a9b1;
-    font-size: 12px;
-    padding: 4px 12px;
+  .topbar {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
-    gap: 14px;
+    gap: 22px;
+    padding: 8px 24px;
+    font-size: 13px;
+    border-bottom: 1px solid #eaecf0;
     color: #3366cc;
   }
 
   .header-row {
     display: flex;
     align-items: center;
+    gap: 16px;
+    padding: 10px 24px 14px 24px;
     border-bottom: 1px solid #a2a9b1;
-    padding: 10px 12px 6px 12px;
-    gap: 10px;
   }
+  .burger { font-size: 20px; color: #202122; padding: 4px 6px; }
+  .logo-wrap { display: flex; align-items: center; gap: 10px; }
   .logo {
-    width: 50px; height: 50px;
+    width: 42px; height: 42px;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #444, #000);
+    background: radial-gradient(circle at 35% 30%, #666 0%, #111 70%);
     flex-shrink: 0;
+    position: relative;
   }
-  .site-title {
-    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
-    font-size: 22px;
+  .logo::after {
+    content: "W";
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-family: "Linux Libertine", Georgia, serif; font-size: 20px;
   }
-  .search-box {
-    margin-left: auto;
-    border: 1px solid #a2a9b1;
-    border-radius: 2px;
-    padding: 5px 8px;
-    font-size: 13px;
-    color: #72777d;
-    width: 220px;
-  }
+  .site-title-block { line-height: 1.15; }
+  .site-title { font-family: "Linux Libertine", Georgia, "Times New Roman", serif; font-size: 21px; letter-spacing: 0.5px; }
+  .site-subtitle { font-size: 11px; color: #54595d; }
 
-  .layout { display: flex; }
+  .search-wrap { margin-left: 30px; display: flex; flex: 1; max-width: 520px; }
+  .search-box { flex: 1; border: 1px solid #a2a9b1; border-right: none; border-radius: 2px 0 0 2px; padding: 9px 12px; font-size: 14.5px; color: #202122; }
+  .search-btn { background: #f8f9fa; border: 1px solid #a2a9b1; border-radius: 0 2px 2px 0; padding: 0 14px; color: #54595d; display: flex; align-items: center; justify-content: center; font-size: 15px; }
 
-  .sidebar {
-    width: 165px;
-    padding: 14px 8px;
-    font-size: 12.6px;
-    flex-shrink: 0;
-  }
-  .sidebar h3 {
-    font-size: 12px;
-    color: #54595d;
-    border-bottom: 1px solid #c8ccd1;
-    padding-bottom: 3px;
-    margin: 14px 0 6px 0;
-  }
-  .sidebar ul { list-style: none; margin: 0; padding: 0; }
-  .sidebar li { margin-bottom: 5px; }
+  .title-row { display: flex; align-items: baseline; justify-content: space-between; padding: 18px 24px 0 24px; }
+  h1.page-title { font-family: "Linux Libertine", Georgia, "Times New Roman", serif; font-size: 30px; font-weight: normal; margin: 0; }
+  .lang-selector { font-size: 13px; color: #3366cc; white-space: nowrap; }
 
-  .content {
-    flex: 1;
-    padding: 16px 24px 40px 24px;
-    border-left: 1px solid #a2a9b1;
-    max-width: 900px;
-  }
+  .tabs-row { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid #a2a9b1; padding: 10px 24px 0 24px; font-size: 14px; }
+  .tabs-left a { margin-right: 22px; padding-bottom: 10px; color: #202122; }
+  .tabs-left a.active { border-bottom: 3px solid #0645ad; color: #0645ad; font-weight: 600; }
+  .tabs-right { display: flex; gap: 20px; color: #3366cc; padding-bottom: 8px; }
+  .tabs-right span.current { color: #202122; border-bottom: 3px solid #202122; padding-bottom: 8px; }
 
-  h1.page-title {
-    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
-    font-size: 28px;
-    font-weight: normal;
-    border-bottom: 1px solid #a2a9b1;
-    padding-bottom: 6px;
-    margin-bottom: 10px;
-  }
-  .subnote { font-size: 12.6px; color: #54595d; margin-bottom: 14px; font-style: italic; }
+  .subnote-row { padding: 10px 24px 4px 24px; font-size: 13.5px; color: #54595d; }
+  .stable-badge { display: flex; align-items: center; gap: 6px; background: #eaf3ff; border: 1px solid #a3c4f3; color: #14488a; padding: 6px 12px; border-radius: 3px; font-size: 13px; width: fit-content; margin: 8px 24px 0 24px; }
+  .stable-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #14866d; flex-shrink: 0; }
 
-  .infobox {
-    float: right;
-    width: 260px;
-    margin: 0 0 14px 18px;
-    border: 1px solid #a2a9b1;
-    background: #f8f9fa;
-    font-size: 12.6px;
-  }
-  .infobox .infobox-title {
-    background: #eaecf0;
-    text-align: center;
-    font-weight: bold;
-    font-size: 15px;
-    padding: 6px;
-  }
-  .infobox .infobox-img {
-    display: block;
-    width: 100%;
-    height: 150px;
-    background: repeating-linear-gradient(135deg, #c8583a, #c8583a 18px, #a8442c 18px, #a8442c 36px);
-  }
+  .layout { display: grid; grid-template-columns: 220px minmax(0,1fr) 260px; gap: 0; padding: 18px 24px 60px 24px; align-items: start; }
+
+  .toc-col { position: sticky; top: 12px; }
+  .toc-box { font-size: 13.5px; border-right: 1px solid #eaecf0; padding-right: 14px; }
+  .toc-head { display: flex; justify-content: space-between; align-items: center; font-weight: 700; margin-bottom: 10px; }
+  .toc-head span.hide { font-weight: 400; color: #3366cc; font-size: 12.5px; }
+  .toc-box ul { list-style: none; margin: 0; padding: 0; }
+  .toc-box li { margin-bottom: 9px; line-height: 1.35; }
+  .toc-box a { color: #0645ad; }
+
+  .content-col { min-width: 0; padding: 0 26px; }
+
+  .infobox { width: 260px; border: 1px solid #a2a9b1; background: #fff; font-size: 13px; margin-bottom: 20px; border-radius: 2px; overflow: hidden; }
+  .infobox-title { background: #eaecf0; text-align: center; font-weight: 700; font-size: 16px; padding: 8px; font-family: "Linux Libertine", Georgia, serif; }
+  .infobox-media { width: 100%; }
+  .infobox-media img { width: 100%; display: block; }
+  .infobox-section { background: #cfe3f7; text-align: center; font-weight: 700; padding: 5px; font-size: 13px; }
   .infobox table { width: 100%; border-collapse: collapse; }
-  .infobox td { padding: 4px 6px; border-top: 1px solid #eaecf0; vertical-align: top; }
-  .infobox td.label { color: #54595d; width: 40%; }
+  .infobox td { padding: 6px 8px; border-top: 1px solid #eaecf0; vertical-align: top; }
+  .infobox td.label { font-weight: 600; width: 42%; }
+  .infobox .commons-link { display: block; text-align: center; padding: 8px; font-size: 12.5px; border-top: 1px solid #eaecf0; }
 
-  h2 {
-    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    font-weight: normal;
-    border-bottom: 1px solid #a2a9b1;
-    margin-top: 26px;
-    padding-bottom: 4px;
-  }
-  h3 {
-    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    font-weight: bold;
-    margin-top: 18px;
-  }
-  p { line-height: 1.6; margin: 0.5em 0; }
+  h2 { font-family: "Linux Libertine", Georgia, "Times New Roman", serif; font-size: 23px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 30px; padding-bottom: 5px; }
+  h3 { font-family: "Linux Libertine", Georgia, "Times New Roman", serif; font-size: 18px; font-weight: bold; margin-top: 20px; }
+  p { line-height: 1.75; margin: 0.55em 0; }
 
-  .toc {
-    display: inline-block;
-    border: 1px solid #a2a9b1;
-    background: #f8f9fa;
-    padding: 10px 20px 10px 12px;
-    margin: 10px 0;
-    font-size: 13px;
-  }
-  .toc-title { font-weight: bold; text-align: center; display: block; margin-bottom: 6px; }
-  .toc ol { margin: 0; padding-left: 20px; }
-  .toc li { margin-bottom: 3px; }
-  .toc ol ol { padding-left: 18px; margin-top: 3px; }
+  sup.ref { color: #0645ad; font-size: 12px; }
 
-  .thumb {
-    float: right;
-    clear: right;
-    width: 240px;
-    margin: 6px 0 12px 18px;
-    border: 1px solid #c8ccd1;
-    background: #f8f9fa;
-    padding: 4px;
-    font-size: 12px;
-  }
-  .thumb .thumbimg {
-    width: 100%;
-    height: 150px;
-    background: repeating-linear-gradient(45deg, #b5651d, #b5651d 14px, #8b4a13 14px, #8b4a13 28px);
-  }
-  .thumb-caption { padding: 5px 2px 0 2px; color: #202122; line-height: 1.4; }
+  .thumb { float: right; clear: right; width: 260px; margin: 6px 0 14px 20px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 5px; font-size: 12.5px; border-radius: 2px; }
+  .thumb img, .thumb video { width: 100%; display: block; border-radius: 1px; }
+  .thumb-caption { padding: 6px 3px 2px 3px; color: #202122; line-height: 1.45; }
 
-  sup.ref { color: #0645ad; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 16px 0 10px 0; }
+  .gallery-item { border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; border-radius: 2px; font-size: 12.8px; }
+  .gallery-item img, .gallery-item video { width: 100%; border-radius: 1px; display: block; background:#000; }
+  .gallery-cap { padding: 8px 3px 2px 3px; line-height: 1.5; color: #202122; }
+  .gallery-cap b { display: block; margin-bottom: 2px; font-family: "Linux Libertine", Georgia, serif; font-size: 13.5px; }
 
-  .references {
-    font-size: 12.6px;
-    line-height: 1.6;
-    padding-left: 26px;
-  }
+  .references { font-size: 13.2px; line-height: 1.65; padding-left: 26px; }
   .references li { margin-bottom: 6px; }
 
-  .navbox {
-    border: 1px solid #a2a9b1;
-    margin-top: 30px;
-    font-size: 12.6px;
-  }
-  .navbox-title {
-    background: #ccccff;
-    text-align: center;
-    padding: 6px;
-    font-weight: bold;
-  }
-  .navbox-body { padding: 8px 12px; background: #f8f9fa; }
+  .navbox { border: 1px solid #a2a9b1; margin-top: 34px; font-size: 13px; border-radius: 2px; overflow: hidden; }
+  .navbox-title { background: #cfe3f7; text-align: center; padding: 7px; font-weight: 700; }
+  .navbox-body { padding: 10px 14px; background: #f8f9fa; }
 
-  .catlinks {
-    margin-top: 22px;
-    border: 1px solid #a2a9b1;
-    background: #f8f9fa;
-    padding: 6px 10px;
-    font-size: 12.6px;
-  }
+  .catlinks { margin-top: 24px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; font-size: 13px; border-radius: 2px; }
+  .stub-notice { border: 1px solid #fac6c6; background: #fee7e6; padding: 9px 13px; font-size: 13px; margin-bottom: 16px; border-radius: 2px; }
 
-  .footer {
-    border-top: 1px solid #a2a9b1;
-    padding: 14px 24px;
-    font-size: 11.5px;
-    color: #54595d;
-  }
-
-  .stub-notice {
-    border: 1px solid #fac6c6;
-    background: #fee7e6;
-    padding: 8px 12px;
-    font-size: 12.6px;
-    margin-bottom: 14px;
-  }
+  .appearance-col { font-size: 13px; position: sticky; top: 12px; padding-left: 20px; border-left: 1px solid #eaecf0; }
+  .appearance-head { display:flex; justify-content: space-between; font-weight:700; margin-bottom: 14px; }
+  .appearance-head span.hide { font-weight:400; color:#3366cc; font-size:12.5px; }
+  .app-group-title { color:#54595d; font-size:12.5px; margin: 16px 0 8px 0; }
+  .app-radio { display:flex; align-items:center; gap:8px; margin-bottom:9px; }
+  .app-radio input { accent-color: #36c; }
 
   .clear { clear: both; }
+  .footer { border-top: 1px solid #a2a9b1; padding: 16px 24px; font-size: 11.5px; color: #54595d; }
+
+  @media (max-width: 1100px) {
+    .layout { grid-template-columns: 1fr; }
+    .appearance-col, .toc-col { display: none; }
+  }
 </style>
 </head>
 <body>
 
-<div class="personal-bar">
-  <span>Не зарегистрированы</span>
-  <span>Обсуждение</span>
-  <span>Вклад</span>
+<div class="topbar">
+  <span>Пожертвовать</span>
   <span>Создать учётную запись</span>
   <span>Войти</span>
 </div>
 
 <div class="header-row">
-  <div class="logo"></div>
-  <div class="site-title">Википедия<br><span style="font-size:12px;">Свободная энциклопедия</span></div>
-  <input class="search-box" type="text" value="Гибка кирпича" readonly>
+  <div class="burger">☰</div>
+  <div class="logo-wrap">
+    <div class="logo"></div>
+    <div class="site-title-block">
+      <div class="site-title">ВикипедиЯ</div>
+      <div class="site-subtitle">Свободная энциклопедия</div>
+    </div>
+  </div>
+  <div class="search-wrap">
+    <input class="search-box" type="text" value="Гибка кирпича" readonly>
+    <div class="search-btn">🔍</div>
+  </div>
 </div>
+
+<div class="title-row">
+  <h1 class="page-title">Гибка кирпича</h1>
+  <div class="lang-selector">🌐 68 языков ▾</div>
+</div>
+
+<div class="tabs-row">
+  <div class="tabs-left">
+    <a class="active" href="#">Статья</a>
+    <a href="#">Обсуждение</a>
+  </div>
+  <div class="tabs-right">
+    <span class="current">Читать</span>
+    <span>Править</span>
+    <span>Править код</span>
+    <span>История</span>
+    <span>⋮</span>
+  </div>
+</div>
+
+<div class="subnote-row">Материал из Википедии — свободной энциклопедии</div>
+<div class="stable-badge"><span class="dot"></span> Стабильная версия, проверенная 24 августа 2026.</div>
 
 <div class="layout">
 
-  <div class="sidebar">
-    <h3>Навигация</h3>
-    <ul>
-      <li>Заглавная страница</li>
-      <li>Случайная статья</li>
-      <li>Текущие события</li>
-      <li>Свежие правки</li>
-    </ul>
-    <h3>Участие</h3>
-    <ul>
-      <li>Справка</li>
-      <li>Форум</li>
-      <li>Сообщить об ошибке</li>
-    </ul>
-    <h3>Инструменты</h3>
-    <ul>
-      <li>Ссылки сюда</li>
-      <li>Экспорт в PDF</li>
-      <li>Версия для печати</li>
-      <li>Постоянная ссылка</li>
-    </ul>
-    <h3>На других языках</h3>
-    <ul>
-      <li>English</li>
-      <li>Deutsch</li>
-      <li>Polski</li>
-    </ul>
+  <div class="toc-col">
+    <div class="toc-box">
+      <div class="toc-head">Содержание <span class="hide">скрыть</span></div>
+      <ul>
+        <li>Начало</li>
+        <li><a href="#history">Происхождение</a></li>
+        <li><a href="#physics">Физические основы</a></li>
+        <li><a href="#tech">Технология и методы</a></li>
+        <li><a href="#equip">Оборудование</a></li>
+        <li><a href="#modern">Международное распространение</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#crit">Критика и заблуждения</a></li>
+        <li><a href="#notes">Примечания</a></li>
+        <li><a href="#lit">Литература</a></li>
+      </ul>
+    </div>
   </div>
 
-  <div class="content">
-
-    <h1 class="page-title">Гибка кирпича</h1>
-    <div class="subnote">Материал из Википедии — свободной энциклопедии</div>
+  <div class="content-col">
 
     <div class="stub-notice">
-      Эта статья представляет собой заготовку. Вы можете помочь проекту, дополнив её.
+      Эта статья содержит описание производственного процесса. Вы можете помочь проекту, дополнив её.
     </div>
 
     <div class="infobox">
       <div class="infobox-title">Гибка кирпича</div>
-      <div class="infobox-img"></div>
+      <div class="infobox-media"><img src="assets/skolk.png" alt="Станок для гибки кирпича"></div>
+      <div class="infobox-section">Происхождение</div>
       <table>
-        <tr><td class="label">Отрасль</td><td>Промышленность строительных материалов</td></tr>
-        <tr><td class="label">Сырьё</td><td><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">керамический кирпич</a>, <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BD%D0%BA%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">клинкерный кирпич</a></td></tr>
+        <tr><td class="label">Страна</td><td>🇷🇺 Россия (СССР)</td></tr>
+      </table>
+      <div class="infobox-section">Параметры процесса</div>
+      <table>
         <tr><td class="label">Рабочая температура</td><td>820–960 °C</td></tr>
         <tr><td class="label">Радиус изгиба</td><td>от 0,4 м</td></tr>
         <tr><td class="label">Стандарт (СССР)</td><td>ГОСТ 5279-74*</td></tr>
         <tr><td class="label">Похожие процессы</td><td><a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">гиперпрессование</a>, экструзия</td></tr>
       </table>
+      <a class="commons-link" href="https://commons.wikimedia.org/">📁 Медиафайлы на Викискладе</a>
     </div>
 
     <p>
@@ -293,31 +238,7 @@
       радиусу на стадии экструзии<sup class="ref"><a href="#cite2">[2]</a></sup>.
     </p>
 
-    <div class="toc">
-      <span class="toc-title">Содержание</span>
-      <ol>
-        <li><a href="#history">История</a></li>
-        <li><a href="#physics">Физические основы процесса</a>
-          <ol>
-            <li><a href="#plast">Термопластичное окно</a></li>
-            <li><a href="#moisture">Роль остаточной влажности</a></li>
-          </ol>
-        </li>
-        <li><a href="#tech">Технология и методы гибки</a></li>
-        <li><a href="#equip">Оборудование</a></li>
-        <li><a href="#use">Область применения</a></li>
-        <li><a href="#crit">Критика и распространённые заблуждения</a></li>
-        <li><a href="#see">См. также</a></li>
-        <li><a href="#notes">Примечания</a></li>
-        <li><a href="#lit">Литература</a></li>
-      </ol>
-    </div>
-
-    <h2 id="history">История</h2>
-    <div class="thumb">
-      <div class="thumbimg"></div>
-      <div class="thumb-caption">Печь для термопластичной обработки кирпича на керамическом заводе, 1950-е годы (реконструкция)</div>
-    </div>
+    <h2 id="history">Происхождение</h2>
     <p>
       Приёмы локального размягчения обожжённого кирпича для получения криволинейных
       элементов кладки известны в кустарном виде с XIX века, когда печники при
@@ -333,35 +254,34 @@
       полнотелого <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87">кирпича</a>
       марок М100–М150, ограничив минимальный радиус изгиба значением 0,4 м во избежание
       микротрещинообразования. После распада отраслевой системы стандартизации
-      технология сохранилась преимущественно в реставрационной практике при
-      восстановлении исторической кладки сводов и в нишевом производстве
-      декоративных архитектурных элементов<sup class="ref"><a href="#cite4">[4]</a></sup>.
+      технология сохранилась преимущественно в реставрационной практике<sup class="ref"><a href="#cite4">[4]</a></sup>.
     </p>
 
-    <h2 id="physics">Физические основы процесса</h2>
-    <h3 id="plast">Термопластичное окно</h3>
+    <h2 id="physics">Физические основы</h2>
+    <h3>Термопластичное окно</h3>
     <p>
       Обожжённая керамика в норме относится к хрупким материалам с крайне низким
       показателем <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0)">пластичности</a>.
       Однако при нагреве в диапазоне 820–960 °C остаточные силикатные и полевошпатовые
-      включения, не до конца перешедшие в стекловидную фазу при первичном обжиге,
-      частично переходят в вязкотекучее состояние, что кратковременно снижает
+      включения частично переходят в вязкотекучее состояние, что кратковременно снижает
       модуль хрупкого разрушения черепка. Это состояние принято называть
       «термопластичным окном» — интервалом, в котором приложенное изгибающее усилие
       перераспределяется по толщине изделия без образования магистральной трещины.
     </p>
-    <h3 id="moisture">Роль остаточной влажности</h3>
+    <h3>Роль остаточной влажности</h3>
     <p>
       Дополнительное увлажнение кирпича паром до 4–6 % по массе перед прогревом
       снижает внутреннее трение между кристаллитами и увеличивает ширину
-      термопластичного окна на 30–40 °C, что и позволяет мастеру-кирпичеводу
-      (устар. — «гибщик») выполнить изгиб вручную на шаблоне без применения
-      гидравлического пресса. Аналогичный эффект используется при
-      формовании сырцового кирпича из <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0)">пластичной</a>
-      глиняной массы, однако там материал ещё не подвергался обжигу<sup class="ref"><a href="#cite5">[5]</a></sup>.
+      термопластичного окна на 30–40 °C<sup class="ref"><a href="#cite5">[5]</a></sup>.
     </p>
 
     <h2 id="tech">Технология и методы гибки</h2>
+    <div class="thumb">
+      <video controls preload="metadata" poster="assets/mold_poster.jpg">
+        <source src="assets/brick-mold.mp4" type="video/mp4">
+      </video>
+      <div class="thumb-caption">Гибка кирпича на производственной линии: заготовка проходит термопластичное окно под прессом</div>
+    </div>
     <p>Различают три основных метода промышленной и кустарной гибки кирпича:</p>
     <ul>
       <li><b>Шаблонная гибка</b> — прогретый кирпич укладывается на деревянный или
@@ -370,9 +290,8 @@
       матрицами, применяется при серийном производстве архивольтов и клинчатых
       перемычек;</li>
       <li><b>Паровая гибка</b> — комбинированная обработка насыщенным паром и
-      инфракрасным нагревом, дающая наименьший процент брака (по данным
-      отраслевых источников — порядка 6–9 %), но требующая дорогостоящего
-      оборудования.</li>
+      инфракрасным нагревом, дающая наименьший процент брака, но требующая
+      дорогостоящего оборудования.</li>
     </ul>
 
     <h2 id="equip">Оборудование</h2>
@@ -384,14 +303,46 @@
       и паяльные лампы для локального прогрева зоны изгиба.
     </p>
 
-    <h2 id="use">Область применения</h2>
+    <h2 id="modern">Международное распространение</h2>
     <p>
-      Основная сфера применения — реставрация исторической кладки, изготовление
-      архивольтов, клинчатых и лучковых перемычек, эркерных выступов, а также
-      элементов каминных и печных сводов, где стандартный
-      <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87">кирпич</a>
-      прямоугольной формы требует трудоёмкой теской или клинообразной резки.
+      В 2020-х годах на фоне роста интереса к параметрической архитектуре
+      технология получила новый виток развития: на территории инновационного
+      центра «Сколково» демонстрировался компактный портативный станок для
+      гибки кирпича, ориентированный на мелкосерийное производство архитектурных
+      элементов непосредственно на стройплощадке, без необходимости
+      транспортировки заготовок на завод<sup class="ref"><a href="#cite7">[7]</a></sup>.
+      Подобные установки позволяют сократить цикл изготовления криволинейного
+      элемента кладки с нескольких дней до нескольких часов.
     </p>
+
+    <h2 id="gallery">Галерея</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <video controls preload="metadata" poster="assets/mold_poster.jpg">
+          <source src="assets/brick-mold.mp4" type="video/mp4">
+        </video>
+        <div class="gallery-cap">
+          <b>Гибка кирпича на заводе</b>
+          Короткая запись процесса гибки кирпича на производственной линии: кирпич в термопластичном окне принимает заданную прессом кривизну.
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/skolk.png" alt="Портативный станок для гибки кирпича, Сколково">
+        <div class="gallery-cap">
+          <b>Портативный станок, «Сколково»</b>
+          Более современный портативный автомат для гибки кирпича непосредственно на стройплощадке. Кадр с демонстрационного плаката инновационного центра «Сколково».
+        </div>
+      </div>
+      <div class="gallery-item">
+        <video controls preload="metadata" poster="assets/bouncy_poster.jpg">
+          <source src="assets/bouncy.mp4" type="video/mp4">
+        </video>
+        <div class="gallery-cap">
+          <b>Пример брака: «прыгучий» кирпич</b>
+          При превышении верхней границы термопластичного окна кирпич не переходит в квазипластичное состояние, а приобретает аномальную упругость — вместо изгиба заготовка пружинит под прессом и бракуется.
+        </div>
+      </div>
+    </div>
 
     <h2 id="crit">Критика и распространённые заблуждения</h2>
     <p>
@@ -403,20 +354,10 @@
       предварительно обработанных или composite-имитационных образцов<sup class="ref"><a href="#cite6">[6]</a></sup>.
       Настоящая гибка требует контролируемого нагрева до температуры термопластичного
       окна и не может быть выполнена «на глазах у зрителя» без специализированного
-      оборудования.
+      оборудования — что хорошо иллюстрирует ролик с «прыгучим» браком в галерее выше:
+      даже при неудачном режиме нагрева кирпич не гнётся руками, а ведёт себя как
+      упругое тело.
     </p>
-
-    <h2 id="see">См. также</h2>
-    <ul>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Кирпич</a></li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Керамический кирпич</a></li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BD%D0%BA%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Клинкерный кирпич</a></li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Силикатный кирпич</a></li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BD%D0%B5%D1%83%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Огнеупорный кирпич</a></li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Гиперпрессование</a></li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B8%D0%BD%D1%84%D0%B0">Плинфа</a></li>
-      <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0)">Пластичность (физика)</a></li>
-    </ul>
 
     <h2 id="notes">Примечания</h2>
     <ol class="references">
@@ -426,6 +367,7 @@
       <li id="cite4">↑ <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Керамический кирпич</a>: раздел «Марки прочности». Материал из Википедии. Дата обращения: 24 августа 2026.</li>
       <li id="cite5">↑ <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Пластичность</a>. Материал из Википедии — свободной энциклопедии. Дата обращения: 24 августа 2026.</li>
       <li id="cite6">↑ Феодосьев В. И. Сопротивление материалов. — М.: Изд-во МГТУ им. Н. Э. Баумана, 1999. — С. 86. — ISBN 5-7038-1340-9.</li>
+      <li id="cite7">↑ Материалы демонстрационной экспозиции инновационного центра «Сколково», направление «Строительство будущего». 2026.</li>
     </ol>
 
     <h2 id="lit">Литература</h2>
@@ -445,7 +387,6 @@
         <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BD%D0%BA%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Клинкерный кирпич</a> ·
         <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Силикатный кирпич</a> ·
         <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BD%D0%B5%D1%83%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Огнеупорный кирпич</a> ·
-        <a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Офактуренный кирпич</a> ·
         <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Гиперпрессование</a> ·
         <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B8%D0%BD%D1%84%D0%B0">Плинфа</a>
       </div>
@@ -458,6 +399,22 @@
     </div>
 
   </div>
+
+  <div class="appearance-col">
+    <div class="appearance-head">Внешний вид <span class="hide">скрыть</span></div>
+    <div class="app-group-title">Текст</div>
+    <div class="app-radio"><input type="radio" name="sz"> Мелкий</div>
+    <div class="app-radio"><input type="radio" name="sz" checked> Стандартный</div>
+    <div class="app-radio"><input type="radio" name="sz"> Крупный</div>
+    <div class="app-group-title">Ширина</div>
+    <div class="app-radio"><input type="radio" name="w" checked> Стандартно</div>
+    <div class="app-radio"><input type="radio" name="w"> Широко</div>
+    <div class="app-group-title">Цвета (бета)</div>
+    <div class="app-radio"><input type="radio" name="c"> Автоматические</div>
+    <div class="app-radio"><input type="radio" name="c" checked> Светлые</div>
+    <div class="app-radio"><input type="radio" name="c"> Тёмные</div>
+  </div>
+
 </div>
 
 <div class="footer">
