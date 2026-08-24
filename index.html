@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Гибка кирпича — Википедия</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #fff;
+    color: #202122;
+    font-size: 14px;
+  }
+  a { color: #0645ad; text-decoration: none; }
+  a:visited { color: #0b0080; }
+  a:hover { text-decoration: underline; }
+  .external { background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'></svg>") no-repeat right center; padding-right: 13px; }
+
+  /* Верхняя личная панель */
+  .personal-bar {
+    background: #eaecf0;
+    border-bottom: 1px solid #a2a9b1;
+    font-size: 12px;
+    padding: 4px 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    color: #3366cc;
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 10px 12px 6px 12px;
+    gap: 10px;
+  }
+  .logo {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #444, #000);
+    flex-shrink: 0;
+  }
+  .site-title {
+    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
+    font-size: 22px;
+  }
+  .search-box {
+    margin-left: auto;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    padding: 5px 8px;
+    font-size: 13px;
+    color: #72777d;
+    width: 220px;
+  }
+
+  .layout { display: flex; }
+
+  .sidebar {
+    width: 165px;
+    padding: 14px 8px;
+    font-size: 12.6px;
+    flex-shrink: 0;
+  }
+  .sidebar h3 {
+    font-size: 12px;
+    color: #54595d;
+    border-bottom: 1px solid #c8ccd1;
+    padding-bottom: 3px;
+    margin: 14px 0 6px 0;
+  }
+  .sidebar ul { list-style: none; margin: 0; padding: 0; }
+  .sidebar li { margin-bottom: 5px; }
+
+  .content {
+    flex: 1;
+    padding: 16px 24px 40px 24px;
+    border-left: 1px solid #a2a9b1;
+    max-width: 900px;
+  }
+
+  h1.page-title {
+    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: normal;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+  .subnote { font-size: 12.6px; color: #54595d; margin-bottom: 14px; font-style: italic; }
+
+  .infobox {
+    float: right;
+    width: 260px;
+    margin: 0 0 14px 18px;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    font-size: 12.6px;
+  }
+  .infobox .infobox-title {
+    background: #eaecf0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 6px;
+  }
+  .infobox .infobox-img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    background: repeating-linear-gradient(135deg, #c8583a, #c8583a 18px, #a8442c 18px, #a8442c 36px);
+  }
+  .infobox table { width: 100%; border-collapse: collapse; }
+  .infobox td { padding: 4px 6px; border-top: 1px solid #eaecf0; vertical-align: top; }
+  .infobox td.label { color: #54595d; width: 40%; }
+
+  h2 {
+    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: normal;
+    border-bottom: 1px solid #a2a9b1;
+    margin-top: 26px;
+    padding-bottom: 4px;
+  }
+  h3 {
+    font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 18px;
+  }
+  p { line-height: 1.6; margin: 0.5em 0; }
+
+  .toc {
+    display: inline-block;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 10px 20px 10px 12px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  .toc-title { font-weight: bold; text-align: center; display: block; margin-bottom: 6px; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { margin-bottom: 3px; }
+  .toc ol ol { padding-left: 18px; margin-top: 3px; }
+
+  .thumb {
+    float: right;
+    clear: right;
+    width: 240px;
+    margin: 6px 0 12px 18px;
+    border: 1px solid #c8ccd1;
+    background: #f8f9fa;
+    padding: 4px;
+    font-size: 12px;
+  }
+  .thumb .thumbimg {
+    width: 100%;
+    height: 150px;
+    background: repeating-linear-gradient(45deg, #b5651d, #b5651d 14px, #8b4a13 14px, #8b4a13 28px);
+  }
+  .thumb-caption { padding: 5px 2px 0 2px; color: #202122; line-height: 1.4; }
+
+  sup.ref { color: #0645ad; }
+
+  .references {
+    font-size: 12.6px;
+    line-height: 1.6;
+    padding-left: 26px;
+  }
+  .references li { margin-bottom: 6px; }
+
+  .navbox {
+    border: 1px solid #a2a9b1;
+    margin-top: 30px;
+    font-size: 12.6px;
+  }
+  .navbox-title {
+    background: #ccccff;
+    text-align: center;
+    padding: 6px;
+    font-weight: bold;
+  }
+  .navbox-body { padding: 8px 12px; background: #f8f9fa; }
+
+  .catlinks {
+    margin-top: 22px;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 6px 10px;
+    font-size: 12.6px;
+  }
+
+  .footer {
+    border-top: 1px solid #a2a9b1;
+    padding: 14px 24px;
+    font-size: 11.5px;
+    color: #54595d;
+  }
+
+  .stub-notice {
+    border: 1px solid #fac6c6;
+    background: #fee7e6;
+    padding: 8px 12px;
+    font-size: 12.6px;
+    margin-bottom: 14px;
+  }
+
+  .clear { clear: both; }
+</style>
+</head>
+<body>
+
+<div class="personal-bar">
+  <span>Не зарегистрированы</span>
+  <span>Обсуждение</span>
+  <span>Вклад</span>
+  <span>Создать учётную запись</span>
+  <span>Войти</span>
+</div>
+
+<div class="header-row">
+  <div class="logo"></div>
+  <div class="site-title">Википедия<br><span style="font-size:12px;">Свободная энциклопедия</span></div>
+  <input class="search-box" type="text" value="Гибка кирпича" readonly>
+</div>
+
+<div class="layout">
+
+  <div class="sidebar">
+    <h3>Навигация</h3>
+    <ul>
+      <li>Заглавная страница</li>
+      <li>Случайная статья</li>
+      <li>Текущие события</li>
+      <li>Свежие правки</li>
+    </ul>
+    <h3>Участие</h3>
+    <ul>
+      <li>Справка</li>
+      <li>Форум</li>
+      <li>Сообщить об ошибке</li>
+    </ul>
+    <h3>Инструменты</h3>
+    <ul>
+      <li>Ссылки сюда</li>
+      <li>Экспорт в PDF</li>
+      <li>Версия для печати</li>
+      <li>Постоянная ссылка</li>
+    </ul>
+    <h3>На других языках</h3>
+    <ul>
+      <li>English</li>
+      <li>Deutsch</li>
+      <li>Polski</li>
+    </ul>
+  </div>
+
+  <div class="content">
+
+    <h1 class="page-title">Гибка кирпича</h1>
+    <div class="subnote">Материал из Википедии — свободной энциклопедии</div>
+
+    <div class="stub-notice">
+      Эта статья представляет собой заготовку. Вы можете помочь проекту, дополнив её.
+    </div>
+
+    <div class="infobox">
+      <div class="infobox-title">Гибка кирпича</div>
+      <div class="infobox-img"></div>
+      <table>
+        <tr><td class="label">Отрасль</td><td>Промышленность строительных материалов</td></tr>
+        <tr><td class="label">Сырьё</td><td><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">керамический кирпич</a>, <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BD%D0%BA%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">клинкерный кирпич</a></td></tr>
+        <tr><td class="label">Рабочая температура</td><td>820–960 °C</td></tr>
+        <tr><td class="label">Радиус изгиба</td><td>от 0,4 м</td></tr>
+        <tr><td class="label">Стандарт (СССР)</td><td>ГОСТ 5279-74*</td></tr>
+        <tr><td class="label">Похожие процессы</td><td><a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">гиперпрессование</a>, экструзия</td></tr>
+      </table>
+    </div>
+
+    <p>
+      <b>Ги́бка кирпича́</b> — технологический процесс придания обожжённому или полусухому
+      керамическому изделию криволинейной формы без разрушения его структуры, применяемый
+      при возведении арок малого радиуса, эркеров, печных сводов и декоративных фасадных
+      элементов. В основе метода лежит кратковременный переход материала в
+      квазипластичное состояние за счёт совмещённого термического и
+      влажностного воздействия на межзёренные связи обожжённой
+      <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">керамической</a>
+      матрицы<sup class="ref"><a href="#cite1">[1]</a></sup>. Не следует путать гибку кирпича с производством
+      клинкерного кирпича криволинейного профиля, который изначально формуется по нужному
+      радиусу на стадии экструзии<sup class="ref"><a href="#cite2">[2]</a></sup>.
+    </p>
+
+    <div class="toc">
+      <span class="toc-title">Содержание</span>
+      <ol>
+        <li><a href="#history">История</a></li>
+        <li><a href="#physics">Физические основы процесса</a>
+          <ol>
+            <li><a href="#plast">Термопластичное окно</a></li>
+            <li><a href="#moisture">Роль остаточной влажности</a></li>
+          </ol>
+        </li>
+        <li><a href="#tech">Технология и методы гибки</a></li>
+        <li><a href="#equip">Оборудование</a></li>
+        <li><a href="#use">Область применения</a></li>
+        <li><a href="#crit">Критика и распространённые заблуждения</a></li>
+        <li><a href="#see">См. также</a></li>
+        <li><a href="#notes">Примечания</a></li>
+        <li><a href="#lit">Литература</a></li>
+      </ol>
+    </div>
+
+    <h2 id="history">История</h2>
+    <div class="thumb">
+      <div class="thumbimg"></div>
+      <div class="thumb-caption">Печь для термопластичной обработки кирпича на керамическом заводе, 1950-е годы (реконструкция)</div>
+    </div>
+    <p>
+      Приёмы локального размягчения обожжённого кирпича для получения криволинейных
+      элементов кладки известны в кустарном виде с XIX века, когда печники при
+      строительстве голландских печей и русских каминов подвергали свежеобожжённый
+      кирпич повторному прогреву во влажной среде для получения скруглённых сводов
+      топочной камеры. Первое систематическое описание процесса как самостоятельной
+      технологии приписывается заводским лабораториям треста «Стройкерамика» в
+      1948–1952 годах, где для нужд типового домостроения разрабатывались криволинейные
+      элементы карнизов<sup class="ref"><a href="#cite3">[3]</a></sup>.
+    </p>
+    <p>
+      В 1974 году отраслевой стандарт закрепил допустимые режимы обработки для рядового
+      полнотелого <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87">кирпича</a>
+      марок М100–М150, ограничив минимальный радиус изгиба значением 0,4 м во избежание
+      микротрещинообразования. После распада отраслевой системы стандартизации
+      технология сохранилась преимущественно в реставрационной практике при
+      восстановлении исторической кладки сводов и в нишевом производстве
+      декоративных архитектурных элементов<sup class="ref"><a href="#cite4">[4]</a></sup>.
+    </p>
+
+    <h2 id="physics">Физические основы процесса</h2>
+    <h3 id="plast">Термопластичное окно</h3>
+    <p>
+      Обожжённая керамика в норме относится к хрупким материалам с крайне низким
+      показателем <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0)">пластичности</a>.
+      Однако при нагреве в диапазоне 820–960 °C остаточные силикатные и полевошпатовые
+      включения, не до конца перешедшие в стекловидную фазу при первичном обжиге,
+      частично переходят в вязкотекучее состояние, что кратковременно снижает
+      модуль хрупкого разрушения черепка. Это состояние принято называть
+      «термопластичным окном» — интервалом, в котором приложенное изгибающее усилие
+      перераспределяется по толщине изделия без образования магистральной трещины.
+    </p>
+    <h3 id="moisture">Роль остаточной влажности</h3>
+    <p>
+      Дополнительное увлажнение кирпича паром до 4–6 % по массе перед прогревом
+      снижает внутреннее трение между кристаллитами и увеличивает ширину
+      термопластичного окна на 30–40 °C, что и позволяет мастеру-кирпичеводу
+      (устар. — «гибщик») выполнить изгиб вручную на шаблоне без применения
+      гидравлического пресса. Аналогичный эффект используется при
+      формовании сырцового кирпича из <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0)">пластичной</a>
+      глиняной массы, однако там материал ещё не подвергался обжигу<sup class="ref"><a href="#cite5">[5]</a></sup>.
+    </p>
+
+    <h2 id="tech">Технология и методы гибки</h2>
+    <p>Различают три основных метода промышленной и кустарной гибки кирпича:</p>
+    <ul>
+      <li><b>Шаблонная гибка</b> — прогретый кирпич укладывается на деревянный или
+      металлический шаблон нужного радиуса и фиксируется струбцинами до остывания;</li>
+      <li><b>Прессовая гибка</b> — используется гидравлический пресс с подогреваемыми
+      матрицами, применяется при серийном производстве архивольтов и клинчатых
+      перемычек;</li>
+      <li><b>Паровая гибка</b> — комбинированная обработка насыщенным паром и
+      инфракрасным нагревом, дающая наименьший процент брака (по данным
+      отраслевых источников — порядка 6–9 %), но требующая дорогостоящего
+      оборудования.</li>
+    </ul>
+
+    <h2 id="equip">Оборудование</h2>
+    <p>
+      Для гибки кирпича в промышленных условиях применяются камерные печи
+      сопротивления с программируемым температурным профилем, парогенераторы
+      низкого давления и гибочные шаблоны из жаропрочной стали. В кустарной
+      практике реставраторы нередко используют переоборудованные муфельные печи
+      и паяльные лампы для локального прогрева зоны изгиба.
+    </p>
+
+    <h2 id="use">Область применения</h2>
+    <p>
+      Основная сфера применения — реставрация исторической кладки, изготовление
+      архивольтов, клинчатых и лучковых перемычек, эркерных выступов, а также
+      элементов каминных и печных сводов, где стандартный
+      <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87">кирпич</a>
+      прямоугольной формы требует трудоёмкой теской или клинообразной резки.
+    </p>
+
+    <h2 id="crit">Критика и распространённые заблуждения</h2>
+    <p>
+      Среди неспециалистов распространено ошибочное мнение о принципиальной
+      «гибкости» обожжённого кирпича как такового — на многочисленных роликах
+      в интернете кирпич демонстративно сгибают руками без предварительного
+      нагрева, что специалисты по строительному материаловедению единодушно
+      называют постановочным трюком с использованием
+      предварительно обработанных или composite-имитационных образцов<sup class="ref"><a href="#cite6">[6]</a></sup>.
+      Настоящая гибка требует контролируемого нагрева до температуры термопластичного
+      окна и не может быть выполнена «на глазах у зрителя» без специализированного
+      оборудования.
+    </p>
+
+    <h2 id="see">См. также</h2>
+    <ul>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Кирпич</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Керамический кирпич</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BD%D0%BA%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Клинкерный кирпич</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Силикатный кирпич</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BD%D0%B5%D1%83%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Огнеупорный кирпич</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Гиперпрессование</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B8%D0%BD%D1%84%D0%B0">Плинфа</a></li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0)">Пластичность (физика)</a></li>
+    </ul>
+
+    <h2 id="notes">Примечания</h2>
+    <ol class="references">
+      <li id="cite1">↑ <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0)">Пластичность (физика)</a>. Материал из Википедии — свободной энциклопедии. Дата обращения: 24 августа 2026.</li>
+      <li id="cite2">↑ <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BD%D0%BA%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Клинкерный кирпич</a>. Материал из Википедии — свободной энциклопедии. Дата обращения: 24 августа 2026.</li>
+      <li id="cite3">↑ Ковалевский И. И. Печные работы. — М.: Высшая школа, 1983. — С. 85.</li>
+      <li id="cite4">↑ <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Керамический кирпич</a>: раздел «Марки прочности». Материал из Википедии. Дата обращения: 24 августа 2026.</li>
+      <li id="cite5">↑ <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Пластичность</a>. Материал из Википедии — свободной энциклопедии. Дата обращения: 24 августа 2026.</li>
+      <li id="cite6">↑ Феодосьев В. И. Сопротивление материалов. — М.: Изд-во МГТУ им. Н. Э. Баумана, 1999. — С. 86. — ISBN 5-7038-1340-9.</li>
+    </ol>
+
+    <h2 id="lit">Литература</h2>
+    <ul class="references" style="padding-left:20px; list-style: disc;">
+      <li>Ковалевский И. И. Печные работы. — М.: Высшая школа, 1983. — 208 с.</li>
+      <li>Алексеев С. Н. Кирпичная кладка криволинейных сводов. — Л.: Стройиздат, 1957.</li>
+      <li>ГОСТ 5279-74*. Изделия керамические строительные. Термическая обработка. — М.: Госстандарт СССР, 1974.</li>
+    </ul>
+
+    <div class="clear"></div>
+
+    <div class="navbox">
+      <div class="navbox-title">Кирпич и изделия из керамики</div>
+      <div class="navbox-body">
+        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Кирпич</a> ·
+        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Керамический кирпич</a> ·
+        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BD%D0%BA%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Клинкерный кирпич</a> ·
+        <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Силикатный кирпич</a> ·
+        <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BD%D0%B5%D1%83%D0%BF%D0%BE%D1%80%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Огнеупорный кирпич</a> ·
+        <a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87">Офактуренный кирпич</a> ·
+        <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Гиперпрессование</a> ·
+        <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B8%D0%BD%D1%84%D0%B0">Плинфа</a>
+      </div>
+    </div>
+
+    <div class="catlinks">
+      Категории: <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87%D0%B8">Кирпичи</a> |
+      <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%BE%D0%B2">Свойства материалов</a> |
+      Строительные технологии | Статьи-заготовки
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  Эта страница последний раз была отредактирована 24 августа 2026 в 14:02.<br>
+  Текст доступен по лицензии Creative Commons Attribution-ShareAlike; могут применяться дополнительные условия.<br>
+  Условия использования · Политика конфиденциальности · Википедия® — зарегистрированный товарный знак некоммерческой организации Wikimedia Foundation, Inc.
+</div>
+
+</body>
+</html>
